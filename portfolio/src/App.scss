@@ -1,3 +1,42 @@
+// @font-face {
+//   font-family: 'BRONSON-BLI';
+//   src: url(portfolio/src/assets/fonts/BRONSON-Black-Italic.ttf) format("truetype");
+//   font-weight: bold;
+//   font-style: italic;
+// }
+@font-face {
+  font-family: 'BRONSON-BO';
+  src: url(/src/assets/fonts/BRONSON-Black-Outline.ttf) format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'BRONSON-BL';
+  src: url(/src/assets/fonts/BRONSON-Black.ttf);
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BRONSON-BI';
+  src: url(/src/assets/fonts/BRONSON-Bold-Italic.ttf);
+  font-style: italic;
+}
+@font-face {
+  font-family: 'BRONSON-B';
+  src: url(/src/assets/fonts/BRONSON-Bold.ttf);
+  font-style: bold;
+
+}
+@font-face {
+  font-family: 'BRONSON-I';
+  src: url(/src/assets/fonts/BRONSON-Italic.ttf);
+  font-style: italic;
+}
+@font-face {
+  font-family: 'BRONSON';
+  src: url(/src/assets/fonts/BRONSON-Regular.ttf);
+  font-style: normal;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -12,8 +51,8 @@ body {
 
     section {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      // justify-content: center;
+      // align-items: center;
       width: 100vw;
       height: 100vh;
       scroll-snap-align: start;
@@ -21,6 +60,24 @@ body {
 
       &:nth-of-type(1) {
         background-color: #075BF3;
+        color: #FFFFFF;
+        flex-direction: column;
+
+        .NavBar {
+          margin: 10px 0px 0px 0px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          font-family: 'BRONSON';
+          font-size: 25px;
+        }
+
+        h1 {
+          text-align: center;
+          font-family: 'BRONSON';
+          font-size: 50px;
+        }
+
       }
       &:nth-of-type(2) {
         background-color: #2770F8;
@@ -34,6 +91,8 @@ body {
       &:nth-of-type(5) {
         background-color: #93B8FC;
       }
+
+
 
     }
 
