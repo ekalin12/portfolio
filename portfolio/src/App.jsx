@@ -8,10 +8,10 @@ function App() {
     <div className="App">
       <section id="Homepage">
         <div className="NavBar">
-          <a>ABOUT ME</a>
-          <a>SKILLS</a>
-          <a>PORTFOLIO</a>
-          <a>CONTACT</a>
+          <a href="#AboutMe">ABOUT ME</a>
+          <a href="#TechStack">SKILLS</a>
+          <a href="#Portfolio">PORTFOLIO</a>
+          <a href="#ContactMe">CONTACT</a>
         </div>
         <h1>Eric Kalin</h1>
       </section>
