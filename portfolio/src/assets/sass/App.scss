@@ -1,0 +1,160 @@
+@import 'Section1';
+// @import 'Section2';
+// @import 'Section3';
+// @import 'Section4';
+// @import 'Section5';
+
+
+// @font-face {
+//   font-family: 'BRONSON-BLI';
+//   src: url(portfolio/src/assets/fonts/BRONSON-Black-Italic.ttf) format("truetype");
+//   font-weight: bold;
+//   font-style: italic;
+// }
+@font-face {
+  font-family: 'BRONSON-BO';
+  src: url(/src/assets/fonts/BRONSON-Black-Outline.ttf) format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'BRONSON-BL';
+  src: url(/src/assets/fonts/BRONSON-Black.ttf);
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BRONSON-BI';
+  src: url(/src/assets/fonts/BRONSON-Bold-Italic.ttf);
+  font-style: italic;
+}
+@font-face {
+  font-family: 'BRONSON-B';
+  src: url(/src/assets/fonts/BRONSON-Bold.ttf);
+  font-style: bold;
+
+}
+@font-face {
+  font-family: 'BRONSON-I';
+  src: url(/src/assets/fonts/BRONSON-Italic.ttf);
+  font-style: italic;
+}
+@font-face {
+  font-family: 'BRONSON';
+  src: url(/src/assets/fonts/BRONSON-Regular.ttf);
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// body {
+//   width: 100vw;
+//   height: 100vh;
+//   margin: 0;
+//   background-color: #075BF3;
+
+//   #root {
+//     width: 100%;
+//     height: 100%;
+//     scroll-snap-type: y mandatory;
+//     overflow-y: scroll;
+//     scroll-behavior: smooth;
+
+//     section {
+//       display: flex;
+//       width: 100vw;
+//       height: 100vh;
+//       scroll-snap-align: start;
+//       scroll-snap-stop: always;
+
+//       a:link {
+//         text-decoration: none;
+//         color: #FFFFFF;
+//       }
+//       a:visited {
+//         text-decoration: none;
+//         color: #FFFFFF;
+//       }
+//       a:hover {
+//         text-decoration: none;
+//         color: #FFFFFF;
+//       }
+//       a:active {
+//         text-decoration: none;
+//         color: #FFFFFF;
+//       }
+
+//       &:nth-of-type(1) {
+//         background-color: #075BF3;
+//         color: #FFFFFF;
+//         flex-direction: column;
+
+//         .NavBar {
+//           margin: 10px 0px 0px 0px;
+//           display: flex;
+//           gap: 100px;
+//           align-items: center;
+//           font-family: 'BRONSON';
+//           font-size: 25px;
+
+//           .colorSchemeSelector{
+//             display: inline-flex;
+//             width: 70px;
+//             height: 70px;
+//             overflow: hidden;
+//             border-radius: 50px;
+//             background-color: black;
+//             justify-content: center;
+//             align-items: center;
+//             margin-left: 170px;
+
+//             .css-text {
+//               font-size: 20px;
+//               text-align: center;
+//               width: 100%;
+//             }
+
+//             .css-hidden {
+//               display:flex;
+//               flex-direction: row;
+
+//               img {
+//                 height: 30px;
+//                 width: 30px;
+//               }
+
+//             }
+
+//           }
+
+//         }
+
+//         h1 {
+//           text-align: center;
+//           font-family: 'BRONSON';
+//           font-size: 220px;
+//         }
+
+//       }
+//       &:nth-of-type(2) {
+//         background-color: #2770F8;
+//       }
+//       &:nth-of-type(3) {
+//         background-color: #4B88F9;
+//       }
+//       &:nth-of-type(4) {
+//         background-color: #6FA0FB;
+//       }
+//       &:nth-of-type(5) {
+//         background-color: #93B8FC;
+//       }
+
+
+
+//     }
+
+//   }
+
+// }
+
