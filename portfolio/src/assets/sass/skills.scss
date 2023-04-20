@@ -1,0 +1,38 @@
+#Skills {
+  padding: 20px 0px 0px 20px;
+  display: flex;
+  flex-direction: column;
+
+  .skillsText {
+    color: #FFFFFF;
+    font-size: 65px;
+    font-family: 'BRONSON-BL';
+    height: 3em;
+    width: 9em;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .skillsTextOutline {
+    font-family: 'BRONSON-BO';
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .blobContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 75%;
+
+    .blob1, .blob2, .blob3 {
+      height: 700px;
+      width: 700px;
+
+    }
+
+
+  }
+
+
+}

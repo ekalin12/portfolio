@@ -1,8 +1,8 @@
-@import 'Section1';
-// @import 'Section2';
-// @import 'Section3';
-// @import 'Section4';
-// @import 'Section5';
+@import 'homepage';
+@import 'aboutMe';
+@import 'skills';
+@import 'portfolio';
+@import 'contactMe';
 
 
 // @font-face {
@@ -12,28 +12,33 @@
 //   font-style: italic;
 // }
 @font-face {
+  //BLACK OUTLINE
   font-family: 'BRONSON-BO';
   src: url(/src/assets/fonts/BRONSON-Black-Outline.ttf) format('truetype');
   font-style: normal;
   font-weight: 700;
 }
 @font-face {
+  //BLACK
   font-family: 'BRONSON-BL';
   src: url(/src/assets/fonts/BRONSON-Black.ttf);
   font-style: normal;
 }
 @font-face {
+  //BOLD ITALIC
   font-family: 'BRONSON-BI';
   src: url(/src/assets/fonts/BRONSON-Bold-Italic.ttf);
   font-style: italic;
 }
 @font-face {
+  //BOLD
   font-family: 'BRONSON-B';
   src: url(/src/assets/fonts/BRONSON-Bold.ttf);
   font-style: bold;
 
 }
 @font-face {
+  //ITALIC
   font-family: 'BRONSON-I';
   src: url(/src/assets/fonts/BRONSON-Italic.ttf);
   font-style: italic;
