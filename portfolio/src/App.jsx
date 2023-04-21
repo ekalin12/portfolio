@@ -5,6 +5,7 @@ import orangeGreenIcon from './assets/Icons/color2.png';
 import yellowBlueIcon from './assets/Icons/color3.png';
 import purpleIcon from './assets/Icons/color4.png';
 import selfie from './assets/images/eric-image.png';
+import { BsArrowUpRight } from 'react-icons/bs';
 import './assets/sass/App.scss'
 
 function App() {
@@ -273,7 +274,38 @@ function App() {
         </div>
       </section>
       <section id="ContactMe">
-        <h1>Page Five</h1>
+        <div className="CMTitleContainer">
+          <div className="CMTitleLeft"></div>
+          <div className="CMTitleText">CONTACT ME.</div>
+          <div className="CMTitleRight"></div>
+        </div>
+        <div className="CMFormContainer">
+          <div className="CMFormTextfield">
+          <form>
+            <label>
+              Name:
+              <input type="text" name="name" />
+            </label>
+            <label>
+              Email:
+              <input type="text" name="email" />
+            </label>
+            <label>
+              Message:
+              <input type="text" name="message" />
+            </label>
+            {/* <input type="submit" value="Submit" /> */}
+          </form>
+            <div className="CMFormButton">SUBMIT<BsArrowUpRight color="black"/></div>
+          </div>
+        </div>
+        <div className="CMFooterContainer">
+          <div className="CMFooterLinks">
+          <a>Linkedin.</a>
+          <a>Github.</a>
+          <a>Resume.</a>
+          </div>
+        </div>
       </section>
 
     </div>

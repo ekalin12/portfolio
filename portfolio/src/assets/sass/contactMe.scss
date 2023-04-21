@@ -1,0 +1,64 @@
+#ContactMe {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px 0px 20px;
+
+  .CMTitleContainer {
+    display: flex;
+    justify-content: space-evenly;
+    height: 33%;
+
+    .CMTitleLeft, .CMTitleRight {
+      height: 4em;
+      width: 25em;
+      background-color: #FFFFFF;
+
+    }
+
+    .CMTitleText {
+      font-family: 'BRONSON-BL';
+      font-size: 65px;
+    }
+
+  }
+
+  .CMFormContainer {
+    display: flex;
+    justify-content: flex-end;
+    height: 33%;
+    padding: 0 20px 0 0;
+
+    .CMFormTextfield {
+      height: 75%;
+      color: purple;
+      // display: flex;
+      // justify-content: flex-end;
+    }
+
+    .CMFormButton {
+      font-family: 'BRONSON-BL';
+      font-size: 65px;
+      color: #FFFFFF;
+    }
+
+
+
+
+
+  }
+
+  .CMFooterContainer {
+    height: 33%;
+    padding: 0 0 20px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    a {
+      font-family: 'Apercu-Bold';
+      font-size: 20px;
+      color:#FFFFFF;
+    }
+  }
+
+}
