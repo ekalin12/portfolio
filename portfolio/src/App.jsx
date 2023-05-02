@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import beigeBlackIcon from './assets/Icons/color1.png';
 import orangeGreenIcon from './assets/Icons/color2.png';
 import yellowBlueIcon from './assets/Icons/color3.png';
@@ -10,6 +12,11 @@ import './assets/sass/App.scss'
 
 function App() {
   const [count, setCount] = useState(0)
+  const selfieStyle = {
+    backgroundImage: `url(${selfie})`,
+    height: '150%',
+    width: '100%',
+  }
 
   return (
     <div className="App">
@@ -29,7 +36,16 @@ function App() {
             </motion.div>
           </motion.div>
         </div>
-        <h1>ERIC KALIN</h1>
+        <h1>Eric Kalin</h1>
+        <div className="marquee">
+          <div className="marqueeTrack">
+            <div className="marqueeContent">
+              FULLSTACK ENGINEER
+              FULLSTACK ENGINEER
+              FULLSTACK ENGINEER
+            </div>
+          </div>
+        </div>
       </section>
       <section id="AboutMe">
         <div className="aboutMeTop">
@@ -39,8 +55,9 @@ function App() {
             ABOUT ME
             ABOUT ME
           </div>
-          <div className="aboutMeSelfie">
+          <div className="aboutMeImageContainer">
             <img src={selfie}/>
+            {/* <div className="aboutMeImageOverlay"></div> */}
           </div>
         </div>
         <div className="aboutMeBottom">
@@ -152,8 +169,9 @@ function App() {
             <text x="50%" y="40%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Node.js</text>
             <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Express</text>
             <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">PostgreSQL</text>
-            <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">MongoDB</text>
-            <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">NGINX</text>
+            <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">MySQL</text>
+            <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">MongoDB</text>
+            <text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">NGINX</text>
           </svg>
           </div>
           <div className="blob3">
@@ -195,16 +213,14 @@ function App() {
                 "
               ></animate>
             </path>
-            <text x="50%" y="30%" dominant-baseline="middle" text-anchor="middle">Development & Deployment</text>
-            <text x="50%" y="40%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">AWS: EC2</text>
+            <text x="50%" y="30%" dominant-baseline="middle" text-anchor="middle" font-size="1em">Development</text>
+            <text x="50%" y="40%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">AWS:EC2</text>
             <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Loader.io</text>
             <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">K6</text>
             <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Jest</text>
-            <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Mocha</text>
-            <text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Chai</text>
-            <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Mocha</text>
-            <text x="50%" y="75%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Git</text>
-            <text x="50%" y="80%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Vim</text>
+            <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Mocha/Chai</text>
+            <text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Git</text>
+            <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Vim</text>
           </svg>
           </div>
         </div>

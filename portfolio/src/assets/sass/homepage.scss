@@ -81,9 +81,47 @@ body {
         }
 
         h1 {
+          margin-bottom: 0px;
           text-align: center;
           font-family: 'BRONSON';
-          font-size: 220px;
+          font-size: 65px;
+        }
+
+        .marquee {
+          position: relative;
+          width: 100vw;
+          max-width: 100%;
+          height: 200px;
+          overflow-x: hidden;
+
+          .marqueeTrack {
+            position: absolute;
+            white-space: nowrap;
+            will-change: transform;
+            animation: marquee 32s linear infinite;
+
+            .marqueeContent {
+              font-family: 'Apercu';
+              font-size: 140px;
+              margin-left: 14px;
+            }
+
+            @keyframes marquee {
+              from { transform: translateX(0); }
+              to { transform: translateX(-50%); }
+            }
+
+          }
+
+        }
+
+        .devTitle, .devTitleRepeat {
+          margin-top: 0px;
+          text-align: center;
+          font-family: 'Apercu';
+          font-size: 140px;
+          overflow: hidden;
+          width: 100%;
         }
 
       }
