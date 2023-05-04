@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect } from 'react';
-import { gsap } from "gsap";
+import { gsap, Power2 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import beigeBlackIcon from './assets/Icons/color1.png';
 // import orangeGreenIcon from './assets/Icons/color2.png';
@@ -12,23 +12,13 @@ import Portfolio from './portfolio.jsx';
 import ContactMe from './contactMe.jsx'
 import '../assets/sass/App.scss'
 
-function App({timeline}) {
-  const [count, setCount] = useState(0);
-  let navBar = useRef(null);
-  // useEffect(() => {
-  //   timeline.from([navBar], 1, {
-  //     opacity: 0,
-  //     y: "100",
-  //     skewY: 10,
-  //     stagger: {
-  //       amount: .4
-  //     }
-  //   }, "-=1")
-  // })
+function App() {
+  let tl = new gsap.timeline();
+  let ease = Power2.easeOut;
 
   return (
     <div className="App">
-      <Homepage />
+      <Homepage timeline={tl} ease={ease} />
       <AboutMe />
       <Skills />
       <Portfolio />
