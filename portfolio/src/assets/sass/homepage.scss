@@ -1,8 +1,7 @@
 body {
-  width: 100vw;
-  height: 100vh;
+  // width: 100vw;
+  // height: 100vh;
   margin: 0;
-  background-color: #075BF3;
 
   #root {
     width: 100%;
@@ -10,6 +9,11 @@ body {
     // scroll-snap-type: y mandatory;
     // overflow-y: scroll;
     // scroll-behavior: smooth;
+    --app-primaryColorOne: #075BF3;
+    --app-primaryColorTwo: #FFFFFF;
+    --app-secondaryColor: #000000;
+    --app-accentColor: #FFF500;
+
 
     section {
       display: flex;
@@ -35,9 +39,8 @@ body {
         color: #FFFFFF;
       }
 
-      &:nth-of-type(1) {
-        background-color: #075BF3;
-        color: #FFFFFF;
+        background-color: var(--app-primaryColorOne);
+        color: var(--app-primaryColorTwo);
         flex-direction: column;
 
         .NavBar {
@@ -48,32 +51,48 @@ body {
           font-family: 'BRONSON';
           font-size: 25px;
 
-          .colorSchemeSelector{
+          ul {
+            display: flex;
+            flex-flow: row wrap;
+          }
+
+          .button {
+            background-color: #099;
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            height: 40px;
             display: inline-flex;
-            width: 70px;
-            height: 70px;
-            overflow: hidden;
-            border-radius: 50px;
-            background-color: black;
-            justify-content: center;
             align-items: center;
-            margin-left: 170px;
+            overflow:hidden;
+            width: auto;
+            max-width: 40px;
+            -webkit-transition: max-width 0.5s;
+            transition: max-width 0.5s;
+          }
 
-            .css-text {
-              font-size: 20px;
-              text-align: center;
-              width: 100%;
-            }
+          .button:hover {
+            max-width: 300px;
+          }
 
-            .css-hidden {
-              display:flex;
-              flex-direction: row;
+          .icon {
+            font-family: "Font Awesome 5 Free";
+            font-size: 16px;
+            margin-right: 15px;
+            padding: 0px 8px;
+            display: flex;
+            align-items: center;
+          }
 
-              img {
-                height: 30px;
-                width: 30px;
-              }
+          .text {
+            display: flex;
+            justify-content: center;
+            white-space: nowrap;
+            padding-right: 15px;
 
+            img {
+              height: 25px;
+              width: 25px;
             }
 
           }
@@ -124,22 +143,35 @@ body {
           width: 100%;
         }
 
+    }
+
+    section:last-of-type {
+      display: flex;
+      width: 100vw;
+      height: auto;
+      // scroll-snap-align: start;
+      // scroll-snap-stop: always;
+
+      a:link {
+        text-decoration: none;
+        color: #FFFFFF;
       }
-      // &:nth-of-type(2) {
-      //   background-color: #2770F8;
-      // }
-      // &:nth-of-type(3) {
-      //   background-color: #4B88F9;
-      // }
-      // &:nth-of-type(4) {
-      //   background-color: #6FA0FB;
-      // }
-      // &:nth-of-type(5) {
-      //   background-color: #93B8FC;
-      // }
+      a:visited {
+        text-decoration: none;
+        color: #FFFFFF;
+      }
+      a:hover {
+        text-decoration: none;
+        color: #FFFFFF;
+      }
+      a:active {
+        text-decoration: none;
+        color: #FFFFFF;
+      }
 
-
-
+        background-color: var(--app-primaryColorOne);
+        color: var(--app-primaryColorTwo);
+        flex-direction: column;
     }
 
   }
