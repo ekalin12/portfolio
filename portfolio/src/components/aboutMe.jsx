@@ -17,11 +17,12 @@ function AboutMe() {
         </div>
         <div className="aboutMeBottom">
           <span>
-          I am a Cleveland based Full Stack Engineer with a soft spot for
-          Frontend Development and designing sites that create memorable
-          user experiences. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          I am Full Stack Engineer based in Cleveland with a passion for creating visually
+          impactful websites and front-end design.
+          I have extensive end-to-end experience in building websites from the ground up,
+          from the initial wireframe, to the development and deployment of a site.
+          I thrive in fast paced and collaberative team settings, and look forward to overcoming
+          challenging new projects as I continue to grow and learn as a developer.
           </span>
         </div>
       </section>

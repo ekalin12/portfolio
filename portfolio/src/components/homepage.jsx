@@ -7,7 +7,6 @@ import yellowBlueIcon from '../assets/Icons/color3.png';
 import purpleIcon from '../assets/Icons/color4.png';
 
 function Homepage(props) {
-  console.log('PROPSSS: ', props)
 
   // let navBar = useRef(null);
   let aboutMe = useRef(null);
@@ -17,7 +16,7 @@ function Homepage(props) {
 
   useEffect(() => {
     const primaryOne = getComputedStyle(document.documentElement).getPropertyValue("--app-primaryColorOne")
-    console.log('primary color one: ', primaryOne)
+    //console.log('primary color one: ', primaryOne)
   }, [])
 
   useEffect(() => {
@@ -32,15 +31,13 @@ function Homepage(props) {
   });
 
   function changeColorScheme(primaryColorOne, primaryColorTwo, secondaryColor, accentColor) {
-
-    // console.log('inputs: ', primaryColorOne, primaryColorTwo, secondaryColor, accentColor);
-    // console.log('style: ', document.documentElement)
     // const root = document.documentElement;
-    root.style.setProperty("--app-primaryColorOne", primaryColorOne);
-    root.style.setProperty("--app-primaryColorTwo", primaryColorTwo)
-    root.style.setProperty("--app-secondaryColor", secondaryColor)
-    root.style.setProperty("--app-accentColor", accentColor)
-    console.log(root.style.getPropertyValue('--app-primaryColorTwo'))
+    root.style.setProperty("--app-primaryColorOne", `hsl(${primaryColorOne})`);
+    root.style.setProperty("--app-primaryColorTwo", `hsl(${primaryColorTwo})`)
+    root.style.setProperty("--app-secondaryColor", `hsl(${secondaryColor})`)
+    root.style.setProperty("--app-accentColor", `hsl(${accentColor})`)
+    props.assignSVGColor(primaryColorOne)
+    //console.log(root.style.getPropertyValue('--app-primaryColorOne'))
   }
 
   return (
@@ -54,10 +51,10 @@ function Homepage(props) {
             <li><a href="#" class="button">
             <span class="icon">+</span>
             <span class="text">
-              <img src={beigeBlackIcon} onClick={() => {changeColorScheme('#E3DDCB', '#4B4947', '#000000', '#FFFFFF')}}/>
-              <img src={orangeGreenIcon} onClick={() => {changeColorScheme('#33532F', '#FC8E0E', '#000000', '#FFFFFF')}} />
-              <img src={yellowBlueIcon} onClick={() => {changeColorScheme('#D2C904', '#222836', '#000000', '#FFFFFF')}} />
-              <img src={purpleIcon} onClick={() => {changeColorScheme('#B6A3BE', '#67444C', '#000000', '#FFFFFF')}} />
+              <img src={beigeBlackIcon} onClick={() => {changeColorScheme(`44,31%,72%`,'30,3%,29%','0,0%,0%','0,0%,100%')}}/>
+              <img src={orangeGreenIcon} onClick={() => {changeColorScheme('113,28%,25%','32,98%,52%','0,0%,0%','0,0%,100%')}} />
+              <img src={yellowBlueIcon} onClick={() => {changeColorScheme('57,70%,52%','222,23%,17%','0,0%,0%','0,0%,100%')}} />
+              <img src={purpleIcon} onClick={() => {changeColorScheme('282,17%,69%','346,20%,34%','0,0%,0%','0,0%,100%')}} />
             </span>
           </a></li>
           </ul>

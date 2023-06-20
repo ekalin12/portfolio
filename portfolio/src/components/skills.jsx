@@ -3,7 +3,7 @@ import React from 'react';
 function Skills() {
   return (
     <section id="Skills">
-    {/* <div className="skillsText">
+    <div className="skillsText">
       TECHNICAL
       <div className="skillsTextOutline">
         SKILLS.
@@ -155,7 +155,7 @@ function Skills() {
         <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">Vim</text>
       </svg>
       </div>
-    </div> */}
+    </div>
   </section>
   )
 
