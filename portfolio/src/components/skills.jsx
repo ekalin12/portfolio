@@ -2,7 +2,7 @@ import React from 'react';
 
 function Skills() {
   return (
-    <section id="Skills">
+    <section id="Skills" className="section">
     <div className="skillsText">
       TECHNICAL
       <div className="skillsTextOutline">
@@ -10,7 +10,7 @@ function Skills() {
       </div>
     </div>
     <div className="blobContainer">
-      <div className="blob1">
+      <div className="svg blob1">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <path fill="#FFFFFF" transform="translate(100 100)">
           <animate attributeName="d"
@@ -58,7 +58,7 @@ function Skills() {
         <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">SaSS</text>
       </svg>
       </div>
-      <div className="blob2">
+      <div className="svg blob2">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <path fill="#FFFFFF" transform="translate(100 100)">
           <animate attributeName="d"
@@ -106,7 +106,7 @@ function Skills() {
         <text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-size=".5em">NGINX</text>
       </svg>
       </div>
-      <div className="blob3">
+      <div className="svg blob3">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <path fill="#FFFFFF" transform="translate(100 100)">
           <animate attributeName="d"

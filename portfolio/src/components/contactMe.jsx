@@ -8,10 +8,17 @@ function ContactMe(props) {
   })
 
   return (
-    <section id="ContactMe">
+    <section id="ContactMe" className="section">
 
       <div className="CMOverlay">
-        <div className="CMTitle">CONTACT ME.</div>
+        <div className="CMTitle-Links">
+          <div className="CMTitle">CONTACT ME.</div>
+          <div className="CMLinks">
+            <a>Linkedin.</a>
+            <a>Github.</a>
+            <a>Resume.</a>
+          </div>
+        </div>
         <div className="CMFormContainer">
             <div className="CMFormTextfield">
             <form>

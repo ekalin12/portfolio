@@ -41,7 +41,7 @@ function Homepage(props) {
   }
 
   return (
-    <section id="Homepage">
+    <section id="Homepage" className="section">
         <div className="NavBar">
           <a className="am-aboutme" href="#AboutMe" ref={ el => aboutMe = el}>ABOUT ME</a>
           <a className="am-techstack" href="#Skills" ref={ el => skills = el}>SKILLS</a>
@@ -49,8 +49,8 @@ function Homepage(props) {
           <a className="am-contactme" href="#ContactMe" ref={ el => contactMe = el}>CONTACT</a>
           <ul style={{listStyleType: "none"}}>
             <li><a href="#" class="button">
-            <span class="icon">+</span>
-            <span class="text">
+            <span class="text">COLORS</span>
+            <span class="icon">
               <img src={beigeBlackIcon} onClick={() => {changeColorScheme(`44,31%,72%`,'30,3%,29%','0,0%,0%','0,0%,100%')}}/>
               <img src={orangeGreenIcon} onClick={() => {changeColorScheme('113,28%,25%','32,98%,52%','0,0%,0%','0,0%,100%')}} />
               <img src={yellowBlueIcon} onClick={() => {changeColorScheme('57,70%,52%','222,23%,17%','0,0%,0%','0,0%,100%')}} />

@@ -17,7 +17,7 @@ function Portfolio() {
 
 
   return (
-  <section id="Portfolio">
+  <section id="Portfolio" className="section">
 
     <Swiper
         slidesPerView={3}

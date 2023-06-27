@@ -6,9 +6,6 @@ body {
   #root {
     width: 100%;
     height: 100%;
-    // scroll-snap-type: y mandatory;
-    // overflow-y: scroll;
-    // scroll-behavior: smooth;
     --app-primaryColorOne: #075BF3;
     --app-primaryColorTwo: #FFFFFF;
     --app-secondaryColor: #000000;
@@ -19,45 +16,40 @@ body {
       display: flex;
       width: 100vw;
       height: 100vh;
-      // scroll-snap-align: start;
-      // scroll-snap-stop: always;
 
-      a:link {
-        text-decoration: none;
-        color: #FFFFFF;
-      }
-      a:visited {
-        text-decoration: none;
-        color: #FFFFFF;
-      }
-      a:hover {
-        text-decoration: none;
-        color: #FFFFFF;
-      }
-      a:active {
-        text-decoration: none;
-        color: #FFFFFF;
+      background-color: var(--app-primaryColorOne);
+      color: var(--app-primaryColorTwo);
+      flex-direction: column;
+
+      // &:nth-of-type(2) {
+      //   background-color: var(--app-primaryColorTwo);
+      // }
+      &:nth-of-type(4) {
+        background-color: var(--app-primaryColorTwo);
       }
 
-        background-color: var(--app-primaryColorOne);
-        color: var(--app-primaryColorTwo);
-        flex-direction: column;
+      a:link, a:hover, a:visited, a:active {
+        text-decoration: none;
+        color: #FFFFFF;
+      }
 
         .NavBar {
-          margin: 10px 0px 0px 20px;
+          margin: -15px 0px 0px 20px;
           display: flex;
           gap: 100px;
           align-items: center;
           font-family: 'BRONSON';
           font-size: 25px;
 
+
           ul {
             display: flex;
             flex-flow: row wrap;
+            padding-top: 20px;
           }
 
           .button {
-            background-color: #099;
+            background-color: #000000;
             color: white;
             text-decoration: none;
             border-radius: 60px;
@@ -66,7 +58,7 @@ body {
             align-items: center;
             overflow:hidden;
             width: auto;
-            max-width: 40px;
+            max-width: 74px;
             -webkit-transition: max-width 0.5s;
             transition: max-width 0.5s;
           }
@@ -75,19 +67,20 @@ body {
             max-width: 300px;
           }
 
-          .icon {
-            font-family: "Font Awesome 5 Free";
-            font-size: 16px;
+          .text {
+            font-family: 'BRONSON';
+            font-size: 12px;
             margin-right: 15px;
             padding: 0px 8px;
+            padding-top: 5px;
             display: flex;
             align-items: center;
           }
 
-          .text {
+          .icon {
             display: flex;
             justify-content: center;
-            white-space: nowrap;
+            // white-space: nowrap;
             padding-right: 15px;
 
             img {

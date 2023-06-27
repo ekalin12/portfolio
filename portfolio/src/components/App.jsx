@@ -2,6 +2,8 @@ import React, {useState, useRef, useEffect } from 'react';
 import { gsap, Power2 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+
 import Homepage from './homepage.jsx';
 import AboutMe from './aboutMe.jsx';
 import Skills from './skills.jsx'
@@ -10,13 +12,27 @@ import ContactMe from './contactMe.jsx'
 import '../assets/sass/App.scss'
 
 function App() {
-  let tl = new gsap.timeline();
-  let ease = Power2.easeOut;
   const [SVGColorOne, setSVGColorOne] = useState('hsl(219,94%,39%)')
   const [SVGColorTwo, setSVGColorTwo] = useState('hsl(219,94%,69%)');
 
+  let tl = new gsap.timeline();
+  let sections = gsap.utils.toArray(".section")
+
+  sections.forEach((section, i) => {
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top top",
+      pin: i === sections.length -1 ? false : true,
+      //end:"bottom 100",
+      pinSpacing: false
+    });
+
+  });
+  // let ease = Power2.easeOut;
+
   useEffect(() => {
-    //console.log('SVGColor CHANGE: ', SVGColorOne)
+    console.log('Sections: ', sections)
   })
 
   function assignSVGColor(color) {
@@ -40,7 +56,7 @@ function App() {
 
   return (
     <div className="App">
-      <Homepage timeline={tl} ease={ease} assignSVGColor={assignSVGColor}/>
+      <Homepage timeline={tl} assignSVGColor={assignSVGColor}/>
       <AboutMe />
       <Skills />
       <Portfolio />

@@ -5,6 +5,49 @@
   .CMOverlay {
     z-index: 1;
     position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+      .CMTitle-Links {
+        width: 63%;
+        margin: 10px 0px 0px 15px;
+
+          .CMTitle {
+            height: 35%;
+            font-family: Apercu;
+            font-size: 70px;
+            color: black;
+          }
+
+          .CMLinks {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+            height: 250px;
+            margin-left: 15px;
+            border-radius: 50%;
+            background-color: black;
+
+            a {
+              color: #FFFFFF;
+              font-size: 20px;
+              font-family: Apercu;
+              padding: 5px 0px 0px 5px;
+            }
+
+
+          }
+
+      }
+
+      .CMFormContainer {
+        margin-top: 325px;
+      }
+
   }
 
   .CMWave {
@@ -14,18 +57,6 @@
     height: 100vh;
   }
 
-  .CMTitleContainer {
-    display: flex;
-    justify-content: space-evenly;
-    height: 33%;
-
-
-    .CMTitleText {
-      font-family: 'BRONSON-BL';
-      font-size: 65px;
-    }
-
-  }
 
   .CMFormContainer {
     display: flex;
