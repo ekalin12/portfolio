@@ -1,8 +1,11 @@
+/* eslint-disable react/jsx-boolean-value */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable no-return-assign */
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useState, useRef, useEffect } from 'react';
-import { gsap, Power2 } from "gsap";
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import { gsap, Power2, Power4 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from 'split-type';
 
@@ -28,60 +31,64 @@ import '../assets/sass/App.scss';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const [SVGColorOne, setSVGColorOne] = useState('hsl(219,94%,39%)')
+  const [primaryColorOne, setPrimaryColorOne] = useState();
+  const [primaryColorTwo, setPrimaryColorTwo] = useState('hsl(32,98%,52%)');
+  const [SVGColorOne, setSVGColorOne] = useState('hsl(219,94%,39%)');
   const [SVGColorTwo, setSVGColorTwo] = useState('hsl(219,94%,69%)');
-
   let aboutMe = useRef(null);
   let skills = useRef(null);
   let portfolio = useRef(null);
   let contactMe = useRef(null);
+  const main = useRef();
 
-  const aboutMeText = new SplitType('span.am-text', { types: 'chars' });
-  const chars = aboutMeText.chars;
-
-  // eslint-disable-next-line new-cap
-  const tl = new gsap.timeline();
-  const sections = gsap.utils.toArray(".section")
-
-  // sections.forEach((section, i) => {
-
-  //   ScrollTrigger.create({
-  //     trigger: section,
-  //     start: "top top",
-  //     pin: i === sections.length -1 ? false : true,
-  //     //end:"bottom 100",
-  //     pinSpacing: false
-  //   });
-
+  const aboutMeText = new SplitType('span.amText', { types: 'words' });
+  // useEffect(() => {
+  //   //let colorOne = root.style.getPropertyValue('--app-primaryColorOne');
+  //   //let colorTwo = root.style.getPropertyValue('--app-primaryColorTwo');
+  //   //setPrimaryColorOne(colorOne);
+  //   //setPrimaryColorTwo(colorTwo);
+  //   console.log('Changed Color: ', primaryColorTwo)
   // });
-  // let ease = Power2.easeOut;
-
-  // useEffect(() => {
-  //   console.log('Sections: ', sections)
-  // })
-
-  // useEffect(() => {
-  //   //const primaryOne = getComputedStyle(document.documentElement).getPropertyValue("--app-primaryColorOne")
-  //   //console.log('primary color one: ', primaryOne)
-  // }, [])
 
   useEffect(() => {
-    tl.to([aboutMe, skills, portfolio, contactMe], {
-      y: 20,
-      stagger: {
-        amount: 0.5,
-      },
-      ease: Power2.out,
-      duration: 1,
-    });
+    const tl = gsap.timeline();
+    const sections = gsap.utils.toArray('.section');
+    const ctx = gsap.context(() => {
+      //console.log('primaryColorTwo: ', primaryColorTwo)
+      sections.forEach((section, i) => {
+        // console.log('inner section: ', section, 'i: ', i)
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top top',
+          pin: i === sections.length -1 ? false : true,
+          //end:"bottom 100",
+          pinSpacing: false,
+          markers: true,
+        });
+      });
+
+      gsap.to([aboutMe, skills, portfolio, contactMe], {
+        y: 20,
+        stagger: {
+          amount: 0.5,
+        },
+        ease: Power2.out,
+        duration: 1,
+      });
+    }, main);
+
+    gsap.to(['#AboutMe', '#Portfolio'], {
+      backgroundColor: primaryColorTwo,
+    })
+    return () => ctx.revert();
   });
 
   function assignSVGColor(color) {
     const split = color.split(',');
 
     const h = Number(split[0]);
-    const s = Number(split[1].split('').slice(0,2).join(''));
-    const l = Number(split[2].split('').slice(0,2).join(''));
+    const s = Number(split[1].split('').slice(0, 2).join(''));
+    const l = Number(split[2].split('').slice(0, 2).join(''));
 
     const l_One = l - 10;
     const l_Two = l + 20;
@@ -94,6 +101,10 @@ function App() {
   }
 
   function changeColorScheme(primaryColorOne, primaryColorTwo, secondaryColor, accentColor) {
+    //console.log('inner func primaryColorTwo: ', primaryColorTwo);
+    // console.log('primaryColorTwo state: ', primaryColorTwo)
+    setPrimaryColorOne(`hsl(${primaryColorOne})`);
+    setPrimaryColorTwo(`hsl(${primaryColorTwo})`);
     // const root = document.documentElement;
     // eslint-disable-next-line no-undef
     root.style.setProperty('--app-primaryColorOne', `hsl(${primaryColorOne})`);
@@ -112,10 +123,10 @@ function App() {
 
       <section id="Homepage" className="section">
         <div className="NavBar">
-          <a className="am-aboutme" href="#AboutMe" ref={el => aboutMe = el}>ABOUT ME</a>
-          <a className="am-techstack" href="#Skills" ref={el => skills = el}>SKILLS</a>
-          <a className="am-portfolio" href="#Portfolio" ref={el => portfolio = el}>PORTFOLIO</a>
-          <a className="am-contactme" href="#ContactMe" ref={el => contactMe = el}>CONTACT</a>
+          <a className="am-aboutme am-link" href="#AboutMe" ref={(el) => aboutMe = el}>ABOUT ME</a>
+          <a className="am-techstack am-link" href="#Skills" ref={(el) => skills = el}>SKILLS</a>
+          <a className="am-portfolio am-link" href="#Portfolio" ref={(el) => portfolio = el}>PORTFOLIO</a>
+          <a className="am-contactme am-link" href="#ContactMe" ref={(el) => contactMe = el}>CONTACT</a>
           <ul style={{ listStyleType: 'none' }}>
             <li>
               <a className='button'>
@@ -130,7 +141,7 @@ function App() {
             </li>
           </ul>
         </div>
-        <h1>Eric Kalin</h1>
+        <h1>{primaryColorTwo}</h1>
         <div className="marquee">
           <div className="marqueeTrack">
             <div className="marqueeContent">
@@ -140,7 +151,7 @@ function App() {
         </div>
       </section>
 
-      <section id="AboutMe" className="section">
+      <section id="AboutMe" className="s-aboutMe section">
         <div className="aboutMeTop">
           <div className="aboutMeText">
             ABOUT ME
@@ -153,7 +164,7 @@ function App() {
           </div>
         </div>
         <div className="aboutMeBottom">
-          <span className="am-text">
+          <span className="amText">
             I am Full Stack Engineer based in Cleveland with a passion for creating visually
             impactful websites and front-end design.
             <br />
@@ -337,75 +348,75 @@ function App() {
           modules={[Pagination, Navigation]}
         >
           <SwiperSlide className="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src={MrPort3000} alt="" class="card-img" />
+            <div className="image-content">
+              <span />
+              <div className="card-image">
+                <img src={MrPort3000} alt="" className="card-img" />
               </div>
             </div>
-            <div class="card-content">
-              <h2 class="name">Mr.Port 3000</h2>
-              <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+            <div className="card-content">
+              <h2 className="name">Mr.Port 3000</h2>
+              <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </SwiperSlide>
           <SwiperSlide className="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src={ApiExtension} alt="" class="card-img" />
+            <div className="image-content">
+              <span />
+              <div className="card-image">
+                <img src={ApiExtension} alt="" className="card-img" />
               </div>
             </div>
-            <div class="card-content">
-              <h2 class="name">API Extension</h2>
-              <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+            <div className="card-content">
+              <h2 className="name">API Extension</h2>
+              <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </SwiperSlide>
           <SwiperSlide className="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src={FindYourSpace} alt="" class="card-img" />
+            <div className="image-content">
+              <span />
+              <div className="card-image">
+                <img src={FindYourSpace} alt="" className="card-img" />
               </div>
             </div>
-            <div class="card-content">
-              <h2 class="name">Find Your Space</h2>
-              <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+            <div className="card-content">
+              <h2 className="name">Find Your Space</h2>
+              <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </SwiperSlide>
           <SwiperSlide className="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src={UnderConstruction} alt="" class="card-img" />
+            <div className="image-content">
+              <span />
+              <div className="card-image">
+                <img src={UnderConstruction} alt="" className="card-img" />
               </div>
             </div>
-            <div class="card-content">
-              <h2 class="name">Work in progress...</h2>
-              <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+            <div className="card-content">
+              <h2 className="name">Work in progress...</h2>
+              <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </SwiperSlide>
           <SwiperSlide className="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay" />
-              <div class="card-image">
-                <img src={UnderConstruction} alt="" class="card-img" />
+            <div className="image-content">
+              <span />
+              <div className="card-image">
+                <img src={UnderConstruction} alt="" className="card-img" />
               </div>
             </div>
-            <div class="card-content">
-              <h2 class="name">Work in progress...</h2>
-              <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+            <div className="card-content">
+              <h2 className="name">Work in progress...</h2>
+              <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </SwiperSlide>
           <SwiperSlide className="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src={UnderConstruction} alt="" class="card-img" />
+            <div className="image-content">
+              <span />
+              <div className="card-image">
+                <img src={UnderConstruction} alt="" className="card-img" />
               </div>
             </div>
-            <div class="card-content">
-              <h2 class="name">Work in progress...</h2>
-              <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+            <div className="card-content">
+              <h2 className="name">Work in progress...</h2>
+              <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </SwiperSlide>
         </Swiper>
@@ -415,7 +426,7 @@ function App() {
 
         <div className="CMOverlay">
           <div className="CMTitle-Links">
-          <div className="CMTitle">CONTACT ME.</div>
+            <div className="CMTitle">CONTACT ME.</div>
             <div className="CMLinks">
               <a>Linkedin.</a>
               <a>Github.</a>
