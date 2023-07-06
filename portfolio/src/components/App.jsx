@@ -54,14 +54,12 @@ function App() {
     const tl = gsap.timeline();
     const sections = gsap.utils.toArray('.section');
     const ctx = gsap.context(() => {
-      //console.log('primaryColorTwo: ', primaryColorTwo)
       sections.forEach((section, i) => {
-        // console.log('inner section: ', section, 'i: ', i)
         ScrollTrigger.create({
           trigger: section,
           start: 'top top',
           pin: i === sections.length -1 ? false : true,
-          //end:"bottom 100",
+          // end:"bottom-=100",
           pinSpacing: false,
           markers: true,
         });
@@ -121,7 +119,7 @@ function App() {
   return (
     <div className="App">
 
-      <section id="Homepage" className="section">
+      <section id="Homepage" className=" s-homepage section">
         <div className="NavBar">
           <a className="am-aboutme am-link" href="#AboutMe" ref={(el) => aboutMe = el}>ABOUT ME</a>
           <a className="am-techstack am-link" href="#Skills" ref={(el) => skills = el}>SKILLS</a>

@@ -1,7 +1,7 @@
 #AboutMe {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
+  padding-top: 2.5%;
 
   .aboutMeTop {
     display: flex;
@@ -12,8 +12,6 @@
       display: flex;
       flex-direction: column;
       height: 300px;
-      // height: 18.75em;
-      // width: 37.5em;
       width: 600px;
       text-align: center;
       font-size: 65px;
