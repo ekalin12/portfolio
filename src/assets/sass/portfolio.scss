@@ -1,0 +1,90 @@
+#Portfolio {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  // flex-direction: column;
+
+  // position: relative;
+  height: 100%;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  padding-top: 2.5%;
+  margin-bottom: -2.1%;
+  padding: 0;
+
+  .swiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 80%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    // background: #fff;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .slide-content{
+    margin: 0 40px;
+    overflow: hidden;
+    border-radius: 25px;
+  }
+  .card{
+    border-radius: 25px;
+    background-color: #FFF;
+  }
+  .image-content,
+  .card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+  }
+  .image-content{
+    position: relative;
+    row-gap: 5px;
+    padding: 25px 0;
+  }
+
+  .card-image{
+    position: relative;
+    height: 350px;
+    width: 350px;
+    // border-radius: 50%;
+    // background: #FFF;
+    padding: 3px;
+  }
+  .card-image .card-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10%;
+    border: 4px solid #4070F4;
+  }
+  .name{
+    font-size: 30px;
+    font-weight: 500;
+    color: #333;
+  }
+  .description{
+    font-size: 14px;
+    color: #707070;
+    text-align: center;
+  }
+
+}

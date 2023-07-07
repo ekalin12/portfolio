@@ -1,0 +1,179 @@
+body {
+  // width: 100vw;
+  // height: 100vh;
+  margin: 0;
+
+  #root {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    --app-primaryColorOne: #075BF3;
+    --app-primaryColorTwo: #FFFFFF;
+    --app-secondaryColor: #000000;
+    --app-accentColor: #FFF500;
+
+
+
+    section {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+
+      // &:not(#Homepage) {
+      //   border-top-left-radius: 60px;
+      //   border-top-right-radius: 60px;
+      // }
+
+      background-color: var(--app-primaryColorOne);
+      color: var(--app-primaryColorTwo);
+      flex-direction: column;
+
+      &:nth-of-type(2) {
+        background-color: var(--app-primaryColorTwo);
+      }
+      &:nth-of-type(4) {
+        background-color: var(--app-primaryColorTwo);
+      }
+
+
+      a:link, a:hover, a:visited, a:active {
+        text-decoration: none;
+        color: #FFFFFF;
+      }
+
+        .NavBar {
+          margin: -15px 0px 0px 20px;
+          display: flex;
+          gap: 100px;
+          align-items: center;
+          font-family: 'BRONSON';
+          font-size: 25px;
+
+          ul {
+            display: flex;
+            flex-flow: row wrap;
+            padding-top: 20px;
+          }
+
+          .button {
+            background-color: #000000;
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            overflow:hidden;
+            width: auto;
+            max-width: 74px;
+            -webkit-transition: max-width 0.5s;
+            transition: max-width 0.5s;
+          }
+
+          .button:hover {
+            max-width: 300px;
+          }
+
+          .text {
+            font-family: 'BRONSON';
+            font-size: 12px;
+            margin-right: 15px;
+            padding: 0px 8px;
+            padding-top: 5px;
+            display: flex;
+            align-items: center;
+          }
+
+          .icon {
+            display: flex;
+            justify-content: center;
+            // white-space: nowrap;
+            padding-right: 15px;
+
+            img {
+              height: 25px;
+              width: 25px;
+            }
+          }
+        }
+
+        h1 {
+          margin-bottom: 0px;
+          text-align: center;
+          font-family: 'BRONSON';
+          font-size: 65px;
+        }
+
+        .marquee {
+          position: relative;
+          width: 100vw;
+          max-width: 100%;
+          height: 200px;
+          overflow-x: hidden;
+
+          .marqueeTrack {
+            position: absolute;
+            white-space: nowrap;
+            will-change: transform;
+            animation: marquee 32s linear infinite;
+
+            .marqueeContent {
+              font-family: 'Apercu';
+              font-size: 140px;
+              margin-left: 14px;
+            }
+
+            @keyframes marquee {
+              from { transform: translateX(0); }
+              to { transform: translateX(-50%); }
+            }
+          }
+        }
+
+        .devTitle, .devTitleRepeat {
+          margin-top: 0px;
+          text-align: center;
+          font-family: 'Apercu';
+          font-size: 140px;
+          overflow: hidden;
+          width: 100%;
+        }
+
+    }
+
+
+
+    // section:last-of-type {
+    //   display: flex;
+    //   width: 100vw;
+    //   height: auto;
+    //   // scroll-snap-align: start;
+    //   // scroll-snap-stop: always;
+
+    //   a:link {
+    //     text-decoration: none;
+    //     color: #FFFFFF;
+    //   }
+    //   a:visited {
+    //     text-decoration: none;
+    //     color: #FFFFFF;
+    //   }
+    //   a:hover {
+    //     text-decoration: none;
+    //     color: #FFFFFF;
+    //   }
+    //   a:active {
+    //     text-decoration: none;
+    //     color: #FFFFFF;
+    //   }
+
+    //     background-color: var(--app-primaryColorOne);
+    //     color: var(--app-primaryColorTwo);
+    //     flex-direction: column;
+    // }
+
+  }
+
+}
+
