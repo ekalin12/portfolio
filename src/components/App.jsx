@@ -7,7 +7,13 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { gsap, Power2, Power4 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import emailjs from 'emailjs-com';
+import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import SplitType from 'split-type';
+
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
@@ -40,6 +46,13 @@ function App() {
   let portfolio = useRef(null);
   let contactMe = useRef(null);
   const main = useRef();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm();
+
 
   const aboutMeText = new SplitType('span.amText', { types: 'words' });
   // useEffect(() => {
@@ -58,7 +71,7 @@ function App() {
         ScrollTrigger.create({
           trigger: section,
           start: 'top top',
-          pin: i === sections.length -1 ? false : true,
+          pin: true,
           // end:"bottom-=100",
           pinSpacing: false,
           markers: true,
@@ -115,6 +128,45 @@ function App() {
     assignSVGColor(primaryColorOne);
     // console.log(root.style.getPropertyValue('--app-primaryColorOne'))
   }
+
+  const toastifySuccess = () => {
+    console.log('Inside Toastify!')
+    toast('Form sent!', {
+      position: 'top-center',
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      className: 'submit-feedback success',
+      toastId: 'notifyToast'
+    });
+  };
+
+  const onSubmit = async (data) => {
+    const { name, email, message } = data;
+    try {
+      const templateParams = {
+        name,
+        email,
+        message
+      };
+
+//console.log('ServiceID: ', import.meta.env.VITE_SERVICE_ID, 'TemplateID: ', import.meta.env.VITE_TEMPLATE_ID, 'UserID: ', import.meta.env.VITE_USER_ID)
+      await emailjs.send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_USER_ID
+      );
+      reset();
+      toastifySuccess();
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+
 
   return (
     <div className="App">
@@ -433,29 +485,47 @@ function App() {
           </div>
           <div className="CMFormContainer">
             <div className="CMFormTextfield">
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)} noValidate>
                 <div className="CMNameEmail">
                   <label>
                     Name:
-                    <input type="text" name="name" />
+                    <input type="text" name="name" className="cm-name" {...register('name', {
+                        required: { value: true, message: 'Please enter your name' },
+                        maxLength: {
+                          value: 30,
+                          message: 'Please use 30 characters or less'
+                        }
+                      })}/>
+                       {errors.name && <span className='errorMessage'>{errors.name.message}</span>}
                   </label>
+                  <br />
                   <label>
                     Email:
-                    <input type="text" name="email" />
+                    <input type="email" name="email" className="cm-email" {...register('email', {
+                        required: true,
+                        pattern: '/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/'
+                      })}/>
                   </label>
+                  {errors.email && (
+                      <span className='errorMessage'>Please enter a valid email address</span>
+                    )}
                 </div>
                 <div className="CMMessage">
                   <label>
                     Message:
-                    <textarea name="message" rows={5} wrap="hard"/>
+                    <br />
+                    <textarea name="message" rows={5} wrap="hard" className="cm-message"  {...register('message', {
+                        required: true
+                      })}/>
                   </label>
                   {/* <input type="submit" value="Submit" /> */}
+                  {errors.message && <span className='errorMessage'>Please enter a message</span>}
                 </div>
-              </form>
               <div className="CMFormButton">
-                SUBMIT
+                <button type="submit">SUBMIT</button>
                 <BsArrowUpRight color="black" />
               </div>
+              </form>
             </div>
           </div>
         </div>

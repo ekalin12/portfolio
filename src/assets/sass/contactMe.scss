@@ -38,8 +38,6 @@
               font-family: Apercu;
               padding: 5px 0px 0px 5px;
             }
-
-
           }
 
       }
@@ -73,12 +71,19 @@
       flex-direction: column;
       color: black;
 
-      input {
+      .cm-name {
+        width: 63%;
+      }
+      .cm-email {
+        width: 75%;
+      }
+      .cm-message {
         width: 100%;
       }
 
       label {
         font-size: 25px;
+        font-family: 'Apercu-lite';
       }
 
       textarea:focus, input:focus{
@@ -86,8 +91,11 @@
     }
 
       input[type=text], textarea {
-        background: transparent;
+        // background: transparent;
+        background-color: '#A3A3A3';
         border: none;
+        border-bottom: 1px solid black;
+        outline: 0;
         font-size: 20px;
       }
 
@@ -102,15 +110,14 @@
           width: 25em;
           resize: none;
         }
-
-
       }
-
     }
 
     .CMFormButton {
+      padding-top: 3%;
       display: flex;
       justify-content: center;
+      text-align: center;
       font-family: 'BRONSON-BL';
       font-size: 65px;
       color: black;
