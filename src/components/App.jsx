@@ -74,7 +74,7 @@ function App() {
           pin: true,
           // end:"bottom-=100",
           pinSpacing: false,
-          markers: true,
+          markers: false,
         });
       });
 
@@ -189,7 +189,7 @@ function App() {
             </li>
           </ul>
         </div>
-        <h1>{primaryColorTwo}</h1>
+        <h1>ERIC KALIN</h1>
         <div className="marquee">
           <div className="marqueeTrack">
             <div className="marqueeContent">
