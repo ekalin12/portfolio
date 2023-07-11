@@ -74,13 +74,13 @@
 
   .card-image{
       @media (min-width: 1024px) {
-        height: 325px;
-        width: 325px;
+        height: 250px;
+        width: 250px;
       }
 
     position: relative;
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     padding: 3px;
   }
   .card-image .card-img{
