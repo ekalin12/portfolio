@@ -151,8 +151,6 @@ function App() {
         email,
         message
       };
-
-//console.log('ServiceID: ', import.meta.env.VITE_SERVICE_ID, 'TemplateID: ', import.meta.env.VITE_TEMPLATE_ID, 'UserID: ', import.meta.env.VITE_USER_ID)
       await emailjs.send(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
