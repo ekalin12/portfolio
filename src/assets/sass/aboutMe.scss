@@ -5,7 +5,7 @@
 
   .aboutMeTop {
     display: flex;
-    height: 75%;
+    height: 70%;
     gap: 15%;
 
     .aboutMeText, .aboutMeTextOutline {
@@ -20,9 +20,7 @@
 
     .aboutMeText {
       font-family: 'BRONSON-BL';
-
     }
-
     .aboutMeTextOutline {
       font-family: 'BRONSON-BO';
     }
@@ -49,15 +47,6 @@
     justify-content: flex-end;
     height: 25%;
 
-    .word {
-      transform: translateY(85px);
-      transition: transform .5s;
-    }
-
-    .amText {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    }
-
     span {
       font-family: 'Apercu-Lite';
       width: 75%;
@@ -65,7 +54,7 @@
       text-align: left;
       color:#FFFFFF;
       padding-right: 20px;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
     }
 
   }

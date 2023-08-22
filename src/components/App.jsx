@@ -38,7 +38,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [primaryColorOne, setPrimaryColorOne] = useState();
-  const [primaryColorTwo, setPrimaryColorTwo] = useState('hsl(32,98%,52%)');
+  const [primaryColorTwo, setPrimaryColorTwo] = useState('hsl(220,3%,42%)');
   const [SVGColorOne, setSVGColorOne] = useState('hsl(219,94%,39%)');
   const [SVGColorTwo, setSVGColorTwo] = useState('hsl(219,94%,69%)');
   let aboutMe = useRef(null);
@@ -114,7 +114,7 @@ function App() {
   function changeColorScheme(primaryColorOne, primaryColorTwo, secondaryColor, accentColor) {
     //console.log('inner func primaryColorTwo: ', primaryColorTwo);
     // console.log('primaryColorTwo state: ', primaryColorTwo)
-    setPrimaryColorOne(`hsl(${primaryColorOne})`);
+    setPrimaryColorOne(`hsl(${primaryColorOne})`)
     setPrimaryColorTwo(`hsl(${primaryColorTwo})`);
     // const root = document.documentElement;
     // eslint-disable-next-line no-undef
@@ -404,7 +404,18 @@ function App() {
             </div>
             <div className="card-content">
               <h2 className="name">Mr.Port 3000</h2>
-              <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+              <div className="description">
+                  <ul className="description-left">
+                    <li>React</li>
+                    <li>PostgresSQL</li>
+                    <li>AWS</li>
+                  </ul>
+                  <ul className="description-right">
+                    <li>Javascript</li>
+                    <li>Express</li>
+                    <li>Cloudinary</li>
+                  </ul>
+                </div>
             </div>
           </SwiperSlide>
           <SwiperSlide className="card swiper-slide">
@@ -416,7 +427,20 @@ function App() {
             </div>
             <div className="card-content">
               <h2 className="name">API Extension</h2>
-              <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+              <div className="description">
+                  <ul className="description-left">
+                    <li>PostgresSQL</li>
+                    <li>Node.js</li>
+                    <li>Express</li>
+                    <li>K6</li>
+                  </ul>
+                  <ul className="description-right">
+                    <li>AWS</li>
+                    <li>NGINX</li>
+                    <li>Loader.io</li>
+                    <li>New Relic</li>
+                  </ul>
+                </div>
             </div>
           </SwiperSlide>
           <SwiperSlide className="card swiper-slide">
@@ -428,7 +452,41 @@ function App() {
             </div>
             <div className="card-content">
               <h2 className="name">Find Your Space</h2>
-              <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+              <div className="description">
+                  <ul className="description-left">
+                    <li>Next.js</li>
+                    <li>Material UI</li>
+                    <li>Mocha</li>
+                  </ul>
+                  <ul className="description-right">
+                    <li>Javascript</li>
+                    <li>Jest</li>
+                    <li>Chai</li>
+                  </ul>
+                </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="card swiper-slide">
+            <div className="image-content">
+              <span />
+              <div className="card-image">
+                <img src={UnderConstruction} alt="" className="card-img" />
+              </div>
+            </div>
+            <div className="card-content">
+              <h2 className="name">Personal Portfolio</h2>
+              <div className="description">
+                  <ul className="description-left">
+                    <li>Vite</li>
+                    <li>Javascript</li>
+                    <li>GSAP</li>
+                  </ul>
+                  <ul className="description-right">
+                    <li>React</li>
+                    <li>Vercel</li>
+                    <li>Sass</li>
+                  </ul>
+                </div>
             </div>
           </SwiperSlide>
           <SwiperSlide className="card swiper-slide">
@@ -440,7 +498,18 @@ function App() {
             </div>
             <div className="card-content">
               <h2 className="name">Work in progress...</h2>
-              <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+              <div className="description">
+                  <ul className="description-left">
+                    <li>Next.js</li>
+                    <li>TypeScript</li>
+                    <li>tbd</li>
+                  </ul>
+                  <ul className="description-right">
+                    <li>Javascript</li>
+                    <li>GraphQL</li>
+                    <li>Bootstrap</li>
+                  </ul>
+                </div>
             </div>
           </SwiperSlide>
           <SwiperSlide className="card swiper-slide">
@@ -452,19 +521,18 @@ function App() {
             </div>
             <div className="card-content">
               <h2 className="name">Work in progress...</h2>
-              <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="card swiper-slide">
-            <div className="image-content">
-              <span />
-              <div className="card-image">
-                <img src={UnderConstruction} alt="" className="card-img" />
-              </div>
-            </div>
-            <div className="card-content">
-              <h2 className="name">Work in progress...</h2>
-              <p className="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+              <div className="description">
+                  <ul className="description-left">
+                    <li>React</li>
+                    <li>PostgresSQL</li>
+                    <li>AWS</li>
+                  </ul>
+                  <ul className="description-right">
+                    <li>Javascript</li>
+                    <li>Express</li>
+                    <li>Cloudinary</li>
+                  </ul>
+                </div>
             </div>
           </SwiperSlide>
         </Swiper>

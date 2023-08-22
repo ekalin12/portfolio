@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-content: center;
-
   height: 100%;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -13,7 +12,7 @@
 
   .swiper {
     @media (min-width: 1024px) {
-     width: 70%
+     width: 60%
     }
     display: flex;
     justify-content: center;
@@ -30,13 +29,11 @@
     .swiper-button-next {
       padding-right: 10px;
     }
-
   }
 
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    // background: #fff;
 
     img {
       display: block;
@@ -44,27 +41,24 @@
       height: 100%;
       object-fit: cover;
     }
-
   }
 
   .slide-content{
-    margin: 0 40px;
+    // margin: 0 40px;
     overflow: hidden;
     border-radius: 25px;
   }
-  .card{
+  .card {
     border-radius: 25px;
     background-color: #FFF;
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
     height: 90%;
-
   }
   .image-content,
-  .card-content{
+  .card-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // padding: 10px 14px;
   }
   .image-content{
     position: relative;
@@ -83,22 +77,41 @@
     width: 200px;
     padding: 3px;
   }
-  .card-image .card-img{
+  .card-image .card-img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 10%;
     border: 4px solid #4070F4;
   }
-  .name{
+  .name {
     font-size: 30px;
     font-weight: 500;
     color: #333;
+    margin: 0px;
+    padding-bottom: 20px;
   }
-  .description{
-    font-size: 14px;
+  .description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
     color: #707070;
     text-align: center;
-  }
+    border-top: 1px solid black;
+    height: 12em;
+    width: 80%;
 
+    .description-left, .description-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 20px 0px 0px 0px;
+      font-family: 'Apercu';
+      font-size: 22px;
+      color: #292929;
+      list-style-type: none;
+    }
+  }
 }
