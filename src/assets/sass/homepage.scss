@@ -1,6 +1,4 @@
 body {
-  // width: 100vw;
-  // height: 100vh;
   margin: 0;
 
   #root {
@@ -12,18 +10,11 @@ body {
     --app-secondaryColor: #000000;
     --app-accentColor: #FFF500;
 
-
-
     section {
       display: flex;
       width: 100vw;
       height: 100vh;
       overflow: hidden;
-
-      // &:not(#Homepage) {
-      //   border-top-left-radius: 60px;
-      //   border-top-right-radius: 60px;
-      // }
 
       background-color: var(--app-primaryColorOne);
       color: var(--app-primaryColorTwo);
@@ -35,7 +26,6 @@ body {
       &:nth-of-type(4) {
         background-color: var(--app-primaryColorTwo);
       }
-
 
       a:link, a:hover, a:visited, a:active {
         text-decoration: none;
@@ -131,6 +121,23 @@ body {
           }
         }
 
+        .wrap {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          #green {
+            position:fixed;
+            // left: 45%;
+            // top: 100px;
+            // inset: 250px 0px 0px 0px;
+            width: 150px;
+            height: 150px;
+
+            background-color: green;
+          }
+
+        }
+
         .devTitle, .devTitleRepeat {
           margin-top: 0px;
           text-align: center;
@@ -139,41 +146,7 @@ body {
           overflow: hidden;
           width: 100%;
         }
-
     }
-
-
-
-    // section:last-of-type {
-    //   display: flex;
-    //   width: 100vw;
-    //   height: auto;
-    //   // scroll-snap-align: start;
-    //   // scroll-snap-stop: always;
-
-    //   a:link {
-    //     text-decoration: none;
-    //     color: #FFFFFF;
-    //   }
-    //   a:visited {
-    //     text-decoration: none;
-    //     color: #FFFFFF;
-    //   }
-    //   a:hover {
-    //     text-decoration: none;
-    //     color: #FFFFFF;
-    //   }
-    //   a:active {
-    //     text-decoration: none;
-    //     color: #FFFFFF;
-    //   }
-
-    //     background-color: var(--app-primaryColorOne);
-    //     color: var(--app-primaryColorTwo);
-    //     flex-direction: column;
-    // }
-
   }
-
 }
 

@@ -45,6 +45,7 @@ function App() {
   let skills = useRef(null);
   let portfolio = useRef(null);
   let contactMe = useRef(null);
+  let icon = useRef(null);
   const main = useRef();
   const {
     register,
@@ -86,7 +87,26 @@ function App() {
         ease: Power2.out,
         duration: 1,
       });
+
+
     }, main);
+
+    gsap.set('#green', {xPercent:50});
+
+    gsap.timeline({
+      scrollTrigger:{
+        trigger: "#green",
+        pin: true,
+        scrub:0.2,
+        // start: 'top top',
+        //end:'+=10000',
+        markers: true,
+      }
+    }).to('#green', {
+      rotation:360*5,
+      duration:1, ease:'none',
+    })
+
 
     gsap.to(['#AboutMe', '#Portfolio'], {
       backgroundColor: primaryColorTwo,
@@ -196,6 +216,9 @@ function App() {
               •FULLSTACK ENGINEER•FULLSTACK ENGINEER•FULLSTACK ENGINEER•FULLSTACK ENGINNER
             </div>
           </div>
+        </div>
+        <div className="wrap">
+          <div id="green"></div>
         </div>
       </section>
 
@@ -385,157 +408,167 @@ function App() {
 
       <section id="Portfolio" className="section">
 
-        <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
-          loop={true}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Pagination, Navigation]}
-        >
-          <SwiperSlide className="card swiper-slide">
-            <div className="image-content">
-              <span />
-              <div className="card-image">
-                <img src={MrPort3000} alt="" className="card-img" />
-              </div>
-            </div>
-            <div className="card-content">
-              <h2 className="name">Mr.Port 3000</h2>
-              <div className="description">
-                  <ul className="description-left">
-                    <li>React</li>
-                    <li>PostgresSQL</li>
-                    <li>AWS</li>
-                  </ul>
-                  <ul className="description-right">
-                    <li>Javascript</li>
-                    <li>Express</li>
-                    <li>Cloudinary</li>
-                  </ul>
+        <div className="p-container">
+          <div className="p-header">
+            <div className="p-header-left"></div>
+            <div className="p-header-text">Portfolio</div>
+            <div className="p-header-right"></div>
+          </div>
+          <div className="p-swiper">
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+            >
+              <SwiperSlide className="card swiper-slide">
+                <div className="image-content">
+                  <span />
+                  <div className="card-image">
+                    <img src={MrPort3000} alt="" className="card-img" />
+                  </div>
                 </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="card swiper-slide">
-            <div className="image-content">
-              <span />
-              <div className="card-image">
-                <img src={ApiExtension} alt="" className="card-img" />
-              </div>
-            </div>
-            <div className="card-content">
-              <h2 className="name">API Extension</h2>
-              <div className="description">
-                  <ul className="description-left">
-                    <li>PostgresSQL</li>
-                    <li>Node.js</li>
-                    <li>Express</li>
-                    <li>K6</li>
-                  </ul>
-                  <ul className="description-right">
-                    <li>AWS</li>
-                    <li>NGINX</li>
-                    <li>Loader.io</li>
-                    <li>New Relic</li>
-                  </ul>
+                <div className="card-content">
+                  <h2 className="name">Mr.Port 3000</h2>
+                  <div className="description">
+                      <ul className="description-left">
+                        <li>React</li>
+                        <li>PostgresSQL</li>
+                        <li>AWS</li>
+                      </ul>
+                      <ul className="description-right">
+                        <li>Javascript</li>
+                        <li>Express</li>
+                        <li>Cloudinary</li>
+                      </ul>
+                    </div>
                 </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="card swiper-slide">
-            <div className="image-content">
-              <span />
-              <div className="card-image">
-                <img src={FindYourSpace} alt="" className="card-img" />
-              </div>
-            </div>
-            <div className="card-content">
-              <h2 className="name">Find Your Space</h2>
-              <div className="description">
-                  <ul className="description-left">
-                    <li>Next.js</li>
-                    <li>Material UI</li>
-                    <li>Mocha</li>
-                  </ul>
-                  <ul className="description-right">
-                    <li>Javascript</li>
-                    <li>Jest</li>
-                    <li>Chai</li>
-                  </ul>
+              </SwiperSlide>
+              <SwiperSlide className="card swiper-slide">
+                <div className="image-content">
+                  <span />
+                  <div className="card-image">
+                    <img src={ApiExtension} alt="" className="card-img" />
+                  </div>
                 </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="card swiper-slide">
-            <div className="image-content">
-              <span />
-              <div className="card-image">
-                <img src={UnderConstruction} alt="" className="card-img" />
-              </div>
-            </div>
-            <div className="card-content">
-              <h2 className="name">Personal Portfolio</h2>
-              <div className="description">
-                  <ul className="description-left">
-                    <li>Vite</li>
-                    <li>Javascript</li>
-                    <li>GSAP</li>
-                  </ul>
-                  <ul className="description-right">
-                    <li>React</li>
-                    <li>Vercel</li>
-                    <li>Sass</li>
-                  </ul>
+                <div className="card-content">
+                  <h2 className="name">API Extension</h2>
+                  <div className="description">
+                      <ul className="description-left">
+                        <li>PostgresSQL</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>K6</li>
+                      </ul>
+                      <ul className="description-right">
+                        <li>AWS</li>
+                        <li>NGINX</li>
+                        <li>Loader.io</li>
+                        <li>New Relic</li>
+                      </ul>
+                    </div>
                 </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="card swiper-slide">
-            <div className="image-content">
-              <span />
-              <div className="card-image">
-                <img src={UnderConstruction} alt="" className="card-img" />
-              </div>
-            </div>
-            <div className="card-content">
-              <h2 className="name">Work in progress...</h2>
-              <div className="description">
-                  <ul className="description-left">
-                    <li>Next.js</li>
-                    <li>TypeScript</li>
-                    <li>tbd</li>
-                  </ul>
-                  <ul className="description-right">
-                    <li>Javascript</li>
-                    <li>GraphQL</li>
-                    <li>Bootstrap</li>
-                  </ul>
+              </SwiperSlide>
+              <SwiperSlide className="card swiper-slide">
+                <div className="image-content">
+                  <span />
+                  <div className="card-image">
+                    <img src={FindYourSpace} alt="" className="card-img" />
+                  </div>
                 </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="card swiper-slide">
-            <div className="image-content">
-              <span />
-              <div className="card-image">
-                <img src={UnderConstruction} alt="" className="card-img" />
-              </div>
-            </div>
-            <div className="card-content">
-              <h2 className="name">Work in progress...</h2>
-              <div className="description">
-                  <ul className="description-left">
-                    <li>React</li>
-                    <li>PostgresSQL</li>
-                    <li>AWS</li>
-                  </ul>
-                  <ul className="description-right">
-                    <li>Javascript</li>
-                    <li>Express</li>
-                    <li>Cloudinary</li>
-                  </ul>
+                <div className="card-content">
+                  <h2 className="name">Find Your Space</h2>
+                  <div className="description">
+                      <ul className="description-left">
+                        <li>Next.js</li>
+                        <li>Material UI</li>
+                        <li>Mocha</li>
+                      </ul>
+                      <ul className="description-right">
+                        <li>Javascript</li>
+                        <li>Jest</li>
+                        <li>Chai</li>
+                      </ul>
+                    </div>
                 </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+              </SwiperSlide>
+              <SwiperSlide className="card swiper-slide">
+                <div className="image-content">
+                  <span />
+                  <div className="card-image">
+                    <img src={UnderConstruction} alt="" className="card-img" />
+                  </div>
+                </div>
+                <div className="card-content">
+                  <h2 className="name">Personal Portfolio</h2>
+                  <div className="description">
+                      <ul className="description-left">
+                        <li>Vite</li>
+                        <li>Javascript</li>
+                        <li>GSAP</li>
+                      </ul>
+                      <ul className="description-right">
+                        <li>React</li>
+                        <li>Vercel</li>
+                        <li>Sass</li>
+                      </ul>
+                    </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="card swiper-slide">
+                <div className="image-content">
+                  <span />
+                  <div className="card-image">
+                    <img src={UnderConstruction} alt="" className="card-img" />
+                  </div>
+                </div>
+                <div className="card-content">
+                  <h2 className="name">Work in progress...</h2>
+                  <div className="description">
+                      <ul className="description-left">
+                        <li>Next.js</li>
+                        <li>TypeScript</li>
+                        <li>tbd</li>
+                      </ul>
+                      <ul className="description-right">
+                        <li>Javascript</li>
+                        <li>GraphQL</li>
+                        <li>Bootstrap</li>
+                      </ul>
+                    </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="card swiper-slide">
+                <div className="image-content">
+                  <span />
+                  <div className="card-image">
+                    <img src={UnderConstruction} alt="" className="card-img" />
+                  </div>
+                </div>
+                <div className="card-content">
+                  <h2 className="name">Work in progress...</h2>
+                  <div className="description">
+                      <ul className="description-left">
+                        <li>React</li>
+                        <li>PostgresSQL</li>
+                        <li>AWS</li>
+                      </ul>
+                      <ul className="description-right">
+                        <li>Javascript</li>
+                        <li>Express</li>
+                        <li>Cloudinary</li>
+                      </ul>
+                    </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+
       </section>
 
       <section id="ContactMe" className="section">
@@ -544,8 +577,8 @@ function App() {
           <div className="CMTitle-Links">
             <div className="CMTitle">CONTACT ME.</div>
             <div className="CMLinks">
-              <a>Linkedin.</a>
-              <a>Github.</a>
+              <a href="https://www.linkedin.com/in/erickalin/" target="_blank" rel="noopener">Linkedin.</a>
+              <a href="https://github.com/ekalin12" target="_blank" rel="noopener">Github.</a>
               <a>Resume.</a>
             </div>
           </div>
